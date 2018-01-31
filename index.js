@@ -18,9 +18,9 @@ window.jQuery.ajax=function(url,method,body,headers){
 	request.onreadystatechange=()=>{
 		if(request.readyState===4){
 			if(request.status>=200&&rerquest.status<300){
-				success.call(undefined,request.responseText)
+				resolve.call(undefined,request.responseText)
 			}else if(request.status>=400){
-				fail.call(undefined,request)
+				reject.call(undefined,request)
 			}
 		}
 	}
